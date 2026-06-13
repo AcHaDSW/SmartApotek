@@ -1,4 +1,15 @@
 <resources>
+
     <string name="app_name">SmartApotek</string>
-    <string name="harga_obat">Rp12.000</string>
+
+    <string name="detail_obat">💊 Detail Obat</string>
+
+    <string name="info_obat">
+        Informasi lengkap obat
+    </string>
+
+    <string name="harga_obat">
+        Rp12.000
+    </string>
+
 </resources>
