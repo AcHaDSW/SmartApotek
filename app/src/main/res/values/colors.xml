@@ -1,0 +1,24 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary -->
+    <color name="primary">#1565C0</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_light">#E3F2FD</color>
+
+    <!-- Accent -->
+    <color name="accent_green">#388E3C</color>
+    <color name="accent_orange">#F57C00</color>
+    <color name="accent_purple">#6A1B9A</color>
+    <color name="accent_pink">#AD1457</color>
+
+    <!-- Background -->
+    <color name="bg_screen">#F0F4FF</color>
+    <color name="bg_card">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1A237E</color>
+    <color name="text_secondary">#5C6BC0</color>
+    <color name="text_white">#FFFFFF</color>
+</resources>

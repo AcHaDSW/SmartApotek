@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "684734488099",
+    "project_id": "smartapotek-483ca",
+    "storage_bucket": "smartapotek-483ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684734488099:android:fb8060a38cc5ab987c5b96",
+        "android_client_info": {
+          "package_name": "com.example.smartapotek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684734488099-qq3epitlgq2l4d4jn31dn48vhbhr20ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ3yPs9mn4-mD4KbZevNsnNINZniZCI4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684734488099-qq3epitlgq2l4d4jn31dn48vhbhr20ia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
