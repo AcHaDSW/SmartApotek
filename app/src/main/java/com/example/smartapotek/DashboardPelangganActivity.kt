@@ -5,40 +5,61 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 
-class DashboardPelangganActivity : AppCompatActivity() {
+class DashboardPelangganActivity :
+    AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(
+        savedInstanceState: Bundle?
+    ) {
 
-        setContentView(R.layout.activity_dashboard_pelanggan)
+        super.onCreate(
+            savedInstanceState
+        )
 
-        val btnBelanja =
-            findViewById<CardView>(R.id.btnBelanja)
+        setContentView(
+            R.layout.activity_dashboard_pelanggan
+        )
 
-        val btnRiwayat =
-            findViewById<CardView>(R.id.btnRiwayat)
 
-        btnBelanja.setOnClickListener {
+        // PESAN OBAT
 
-            startActivity(
-                Intent(
-                    this,
-                    PesanObatActivity::class.java
+        findViewById<CardView>(
+            R.id.btnBelanja
+        )
+
+            .setOnClickListener {
+
+                startActivity(
+
+                    Intent(
+                        this,
+                        PesanObatActivity::class.java
+                    )
+
                 )
-            )
 
-        }
+            }
 
-        btnRiwayat.setOnClickListener {
 
-            startActivity(
-                Intent(
-                    this,
-                    RiwayatPesananActivity::class.java
+        // RIWAYAT
+
+        findViewById<CardView>(
+            R.id.btnRiwayat
+        )
+
+            .setOnClickListener {
+
+                startActivity(
+
+                    Intent(
+                        this,
+                        RiwayatPesananActivity::class.java
+                    )
+
                 )
-            )
 
-        }
+            }
 
     }
+
 }

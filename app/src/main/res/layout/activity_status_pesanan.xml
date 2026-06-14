@@ -1,10 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatusPesananActivity">
+    android:background="#F5F8FC">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!-- HEADER -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:background="@drawable/bg_dashboard">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📦 Status Pesanan"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pantau pesanan obatmu"
+                android:textColor="#EAF3FF"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+
+        <!-- CARD -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-70dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pesanan #0001"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#17325C"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paracetamol × 2"
+                    android:textSize="18sp"
+                    android:textColor="#64748B"
+                    android:layout_marginTop="10dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp20.000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#2563EB"
+                    android:layout_marginTop="14dp"/>
+
+
+
+                <!-- STATUS -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="40dp">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:gravity="center"
+                            android:text="✓"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp"
+                            android:background="#22C55E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diverifikasi"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"/>
+
+                    </LinearLayout>
+
+
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="3dp"
+                        android:background="#22C55E"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:gravity="center"
+                            android:text="🚚"
+                            android:textSize="22sp"
+                            android:background="#DBEAFE"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diproses"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"/>
+
+                    </LinearLayout>
+
+
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="3dp"
+                        android:background="#CBD5E1"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:gravity="center"
+                            android:text="🏠"
+                            android:textSize="22sp"
+                            android:background="#E2E8F0"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selesai"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:id="@+id/btnLihat"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="36dp"
+                    android:text="Lihat Detail"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#2563EB"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riwayat Pesanan"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#17325C"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="22dp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:padding="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

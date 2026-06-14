@@ -92,64 +92,33 @@ open class PesanObatActivity : AppCompatActivity() {
 
                     override fun onDataChange(
                         snapshot: DataSnapshot
-                    ) {
+                    ){
 
                         list.clear()
 
-                        Log.d(
-                            "FIREBASE",
-                            snapshot.childrenCount.toString()
-                        )
+                        Toast.makeText(
+                            this@PesanObatActivity,
+                            "Jumlah data: ${snapshot.childrenCount}",
+                            Toast.LENGTH_LONG
+                        ).show()
 
-                        for (
-                        data
-                        in
-                        snapshot.children
-                        ) {
+                        for(data in snapshot.children){
 
-                            val nama =
-                                data.child(
-                                    "nama"
-                                ).getValue(
-                                    String::class.java
-                                ) ?: ""
-
-                            val harga =
-                                data.child(
-                                    "harga"
-                                ).getValue(
-                                    Int::class.java
-                                ) ?: 0
-
-                            val kategori =
-                                data.child(
-                                    "kategori"
-                                ).getValue(
-                                    String::class.java
-                                ) ?: ""
-
-                            val stok =
-                                data.child(
-                                    "stok"
-                                ).getValue(
-                                    Int::class.java
-                                ) ?: 0
-
-
-                            list.add(
-
-                                Obat(
-                                    nama,
-                                    harga,
-                                    kategori,
-                                    stok
+                            val obat=
+                                data.getValue(
+                                    Obat::class.java
                                 )
 
-                            )
+                            if(obat!=null){
+
+                                list.add(obat)
+
+                            }
 
                         }
 
                         adapter.notifyDataSetChanged()
+
 
                         Toast.makeText(
                             this@PesanObatActivity,

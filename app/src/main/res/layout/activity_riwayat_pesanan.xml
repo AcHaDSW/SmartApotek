@@ -1,10 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RiwayatPesananActivity">
+    android:background="#F5F8FC">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!-- HEADER -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:background="@drawable/bg_dashboard">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🧾 Riwayat Pesanan"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lihat seluruh transaksi"
+                android:textColor="#EAF3FF"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+
+        <!-- FILTER -->
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-35dp"
+            android:paddingStart="20dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Semua"
+                    android:backgroundTint="#2563EB"
+                    android:textColor="#FFFFFF"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Diproses"
+                    android:layout_marginStart="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Selesai"
+                    android:layout_marginStart="10dp"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+        <!-- CARD PESANAN -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pesanan #0001"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#17325C"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paracetamol × 2"
+                    android:textSize="18sp"
+                    android:textColor="#64748B"
+                    android:layout_marginTop="8dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 Juni 2026"
+                    android:textColor="#94A3B8"
+                    android:layout_marginTop="12dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp20.000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#2563EB"
+                    android:layout_marginTop="16dp"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="26dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Selesai"
+                        android:textColor="#16A34A"
+                        android:textSize="16sp"/>
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+
+                    <Button
+                        android:id="@+id/btnDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Lihat Detail"
+                        android:backgroundTint="#2563EB"
+                        android:textColor="#FFFFFF"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaksi Lainnya"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#17325C"
+            android:layout_marginStart="22dp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRiwayat"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:padding="18dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
