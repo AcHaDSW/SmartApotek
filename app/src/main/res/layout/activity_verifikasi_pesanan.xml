@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F8FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!-- HEADER -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_dashboard"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋 Verifikasi Pesanan"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kelola pesanan pelanggan dengan cepat"
+                android:textColor="#EAF3FF"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+
+        <!-- CARD -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-70dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="26dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pesanan #001"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#17325C"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nazwa Khirunisa"
+                    android:textSize="18sp"
+                    android:textColor="#64748B"
+                    android:layout_marginTop="6dp"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EDF2F7"
+                    android:layout_marginVertical="18dp"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="💊 Obat"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paracetamol"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🧾 Total"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp20.000"
+                        android:textColor="#2563EB"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📦 Status"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Menunggu"
+                        android:textColor="#F59E0B"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="32dp">
+
+
+                    <Button
+                        android:id="@+id/btnTolak"
+                        android:layout_width="0dp"
+                        android:layout_height="58dp"
+                        android:layout_weight="1"
+                        android:text="Tolak"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#EF4444"/>
+
+
+                    <Space
+                        android:layout_width="14dp"
+                        android:layout_height="1dp"/>
+
+
+                    <Button
+                        android:id="@+id/btnSetuju"
+                        android:layout_width="0dp"
+                        android:layout_height="58dp"
+                        android:layout_weight="1"
+                        android:text="Setujui"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#22C55E"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riwayat Verifikasi"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#17325C"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="22dp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVerifikasi"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="20dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

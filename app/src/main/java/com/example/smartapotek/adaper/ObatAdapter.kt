@@ -9,39 +9,26 @@ import com.example.smartapotek.R
 import com.example.smartapotek.model.Obat
 
 class ObatAdapter(
+    private val list:ArrayList<Obat>
+)
+    : RecyclerView.Adapter<ObatAdapter.ViewHolder>() {
 
-    private val list:
-    ArrayList<Obat>
+    class ViewHolder(itemView: View)
+        : RecyclerView.ViewHolder(itemView){
 
-):
+        var nama=
+            itemView.findViewById<TextView>(R.id.tvNama)
 
-    RecyclerView.Adapter<
-            ObatAdapter.ViewHolder>() {
+        var harga=
+            itemView.findViewById<TextView>(R.id.tvHarga)
 
-    class ViewHolder(
-        itemView:View
-    ):
-        RecyclerView.ViewHolder(
-            itemView
-        ){
+        var kategori=
+            itemView.findViewById<TextView>(R.id.tvKategori)
 
-        val tvNama=
-            itemView.findViewById<TextView>(
-                R.id.tvNama
-            )
-
-        val tvHarga=
-            itemView.findViewById<TextView>(
-                R.id.tvHarga
-            )
-
-        val tvKategori=
-            itemView.findViewById<TextView>(
-                R.id.tvKategori
-            )
+        var stok=
+            itemView.findViewById<TextView>(R.id.tvStok)
 
     }
-
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -50,9 +37,7 @@ class ObatAdapter(
 
         val view=
             LayoutInflater
-                .from(
-                    parent.context
-                )
+                .from(parent.context)
                 .inflate(
                     R.layout.item_obat,
                     parent,
@@ -63,28 +48,28 @@ class ObatAdapter(
 
     }
 
-
-    override fun getItemCount()=
-        list.size
-
-
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
     ){
 
-        val data=
-            list[position]
+        val obat=list[position]
 
-        holder.tvNama.text=
-            data.nama
+        holder.nama.text=
+            obat.nama
 
-        holder.tvHarga.text=
-            "Rp ${data.harga}"
+        holder.harga.text=
+            "Rp ${obat.harga}"
 
-        holder.tvKategori.text=
-            data.kategori
+        holder.kategori.text=
+            obat.kategori
+
+        holder.stok.text=
+            "Stok : ${obat.stok}"
 
     }
+
+    override fun getItemCount()=
+        list.size
 
 }

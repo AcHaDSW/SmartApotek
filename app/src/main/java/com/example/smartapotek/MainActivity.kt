@@ -1,28 +1,60 @@
 package com.example.smartapotek
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    lateinit var auth:
+            FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(
+        savedInstanceState:
+        Bundle?
+    ) {
 
-        setContentView(R.layout.activity_main)
+        super.onCreate(
+            savedInstanceState
+        )
 
-        // Inisialisasi Firebase Auth
-        auth = FirebaseAuth.getInstance()
+        auth =
+            FirebaseAuth.getInstance()
 
-        // Cek user sudah login atau belum
-        val user = auth.currentUser
+        val user =
+            auth.currentUser
 
-        if (user != null) {
-            // User sudah login
-        } else {
-            // User belum login
+        if (
+            user != null
+        ) {
+
+            startActivity(
+
+                Intent(
+                    this,
+                    DashboardPelangganActivity::class.java
+                )
+
+            )
+
         }
+
+        else {
+
+            startActivity(
+
+                Intent(
+                    this,
+                    LoginActivity::class.java
+                )
+
+            )
+
+        }
+
+        finish()
+
     }
+
 }

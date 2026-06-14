@@ -5,99 +5,92 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class DashboardAdminActivity : AppCompatActivity() {
+class DashboardAdminActivity :
+    AppCompatActivity(){
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(
+        savedInstanceState: Bundle?
+    ){
 
-        super.onCreate(savedInstanceState)
+        super.onCreate(
+            savedInstanceState
+        )
 
         setContentView(
             R.layout.activity_dashboard_admin
         )
 
-        val dataObat =
-            findViewById<Button>(
-                R.id.menuDataObat
-            )
 
-        val stok =
-            findViewById<Button>(
-                R.id.menuStok
-            )
+        findViewById<Button>(
+            R.id.menuDataObat
+        )
 
-        val verifikasi =
-            findViewById<Button>(
-                R.id.menuVerifikasi
-            )
+            .setOnClickListener{
 
-        val laporan =
-            findViewById<Button>(
-                R.id.menuLaporan
-            )
+                startActivity(
 
+                    Intent(
+                        this,
+                        KelolaObatActivity::class.java
+                    )
 
-        // KELOLA DATA OBAT
-
-        dataObat.setOnClickListener {
-
-            startActivity(
-
-                Intent(
-                    this,
-                    PesanObatActivity::class.java
                 )
 
-            )
-
-        }
+            }
 
 
-        // KELOLA STOK
+        findViewById<Button>(
+            R.id.menuStok
+        )
 
-        stok.setOnClickListener {
+            .setOnClickListener{
 
-            startActivity(
+                startActivity(
 
-                Intent(
-                    this,
-                    DetailObatActivity::class.java
+                    Intent(
+                        this,
+                        KelolaStokActivity::class.java
+                    )
+
                 )
 
-            )
-
-        }
+            }
 
 
-        // VERIFIKASI
+        findViewById<Button>(
+            R.id.menuVerifikasi
+        )
 
-        verifikasi.setOnClickListener {
+            .setOnClickListener{
 
-            startActivity(
+                startActivity(
 
-                Intent(
-                    this,
-                    RiwayatPesananActivity::class.java
+                    Intent(
+                        this,
+                        VerifikasiPesananActivity::class.java
+                    )
+
                 )
 
-            )
-
-        }
+            }
 
 
-        // LAPORAN
+        findViewById<Button>(
+            R.id.menuLaporan
+        )
 
-        laporan.setOnClickListener {
+            .setOnClickListener{
 
-            startActivity(
+                startActivity(
 
-                Intent(
-                    this,
-                    StatusPesananActivity::class.java
+                    Intent(
+                        this,
+                        LaporanPesananActivity::class.java
+                    )
+
                 )
 
-            )
-
-        }
+            }
 
     }
 
