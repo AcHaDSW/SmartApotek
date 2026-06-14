@@ -1,5 +1,6 @@
 package com.example.smartapotek
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -11,25 +12,33 @@ class DashboardPelangganActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_dashboard_pelanggan)
 
-        val btnObat = findViewById<CardView>(R.id.btnObat)
-        val btnKeranjang = findViewById<CardView>(R.id.btnKeranjang)
-        val btnPembayaran = findViewById<CardView>(R.id.btnPembayaran)
-        val btnRiwayat = findViewById<CardView>(R.id.btnRiwayat)
+        val btnBelanja =
+            findViewById<CardView>(R.id.btnBelanja)
 
-        btnObat.setOnClickListener {
+        val btnRiwayat =
+            findViewById<CardView>(R.id.btnRiwayat)
 
-        }
+        btnBelanja.setOnClickListener {
 
-        btnKeranjang.setOnClickListener {
-
-        }
-
-        btnPembayaran.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    PesanObatActivity::class.java
+                )
+            )
 
         }
 
         btnRiwayat.setOnClickListener {
 
+            startActivity(
+                Intent(
+                    this,
+                    RiwayatPesananActivity::class.java
+                )
+            )
+
         }
+
     }
 }

@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartApotek">
         <activity
+            android:name=".PesanObatActivity"
+            android:exported="false" />
+        <activity
             android:name=".PengingatActivity"
             android:exported="false" />
         <activity
