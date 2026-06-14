@@ -1,10 +1,13 @@
-package com.smartapotek.model
+package com.example.smartapotek.model
 
 data class Obat(
-    val id: Int,
-    val namaObat: String,
-    val kategori: String,
-    val harga: Double,
-    val stok: Int,
-    val deskripsi: String
+
+    var nama:String="",
+
+    var harga:Int=0,
+
+    var kategori:String="",
+
+    var stok:Int=0
+
 )

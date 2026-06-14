@@ -1,70 +1,104 @@
 package com.example.smartapotek
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class DashboardAdminActivity : AppCompatActivity() {
 
-    private lateinit var db: DatabaseReference
-
-    private lateinit var txtTotalObat: TextView
-    private lateinit var txtStok: TextView
-    private lateinit var txtPesanan: TextView
-    private lateinit var txtVerifikasi: TextView
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_dashboard_admin)
+        setContentView(
+            R.layout.activity_dashboard_admin
+        )
 
-        txtTotalObat = findViewById(R.id.txtTotalObat)
-        txtStok = findViewById(R.id.txtStok)
-        txtPesanan = findViewById(R.id.txtPesanan)
-        txtVerifikasi = findViewById(R.id.txtVerifikasi)
+        val dataObat =
+            findViewById<Button>(
+                R.id.menuDataObat
+            )
 
-        db = FirebaseDatabase.getInstance().reference
+        val stok =
+            findViewById<Button>(
+                R.id.menuStok
+            )
 
-        loadDashboard()
-    }
+        val verifikasi =
+            findViewById<Button>(
+                R.id.menuVerifikasi
+            )
 
-    private fun loadDashboard() {
+        val laporan =
+            findViewById<Button>(
+                R.id.menuLaporan
+            )
 
-        db.child("obat").get().addOnSuccessListener {
 
-            txtTotalObat.text =
-                it.childrenCount.toString()
+        // KELOLA DATA OBAT
 
-            var totalStok = 0
+        dataObat.setOnClickListener {
 
-            for (data in it.children) {
+            startActivity(
 
-                totalStok +=
-                    data.child("stok")
-                        .getValue(Int::class.java)
-                        ?: 0
-            }
+                Intent(
+                    this,
+                    PesanObatActivity::class.java
+                )
 
-            txtStok.text =
-                totalStok.toString()
+            )
+
         }
 
-        db.child("pesanan").get()
-            .addOnSuccessListener {
 
-                txtPesanan.text =
-                    it.childrenCount.toString()
-            }
+        // KELOLA STOK
 
-        db.child("verifikasi").get()
-            .addOnSuccessListener {
+        stok.setOnClickListener {
 
-                txtVerifikasi.text =
-                    it.childrenCount.toString()
-            }
+            startActivity(
+
+                Intent(
+                    this,
+                    DetailObatActivity::class.java
+                )
+
+            )
+
+        }
+
+
+        // VERIFIKASI
+
+        verifikasi.setOnClickListener {
+
+            startActivity(
+
+                Intent(
+                    this,
+                    RiwayatPesananActivity::class.java
+                )
+
+            )
+
+        }
+
+
+        // LAPORAN
+
+        laporan.setOnClickListener {
+
+            startActivity(
+
+                Intent(
+                    this,
+                    StatusPesananActivity::class.java
+                )
+
+            )
+
+        }
+
     }
+
 }

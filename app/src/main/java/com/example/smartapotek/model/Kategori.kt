@@ -1,6 +1,9 @@
-package com.smartapotek.model
+package com.example.smartapotek.model
 
 data class Kategori(
-    val id: Int,
-    val namaKategori: String
+
+    var id:String="",
+
+    var namaKategori:String=""
+
 )
